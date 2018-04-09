@@ -9,7 +9,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *current, *check;
 
-	if (list == NULL || list->next == NULL)
+	if (list == NULL)
 		return (0);
 	current = list;
 	check = current->next;
@@ -17,6 +17,8 @@ int check_cycle(listint_t *list)
 	while (current != NULL && check->next != NULL
 	       && check->next->next != NULL)
 	{
+		if (check = NULL)
+			return (0);
 		if (current == check)
 			return (1);
 		current = current->next;
