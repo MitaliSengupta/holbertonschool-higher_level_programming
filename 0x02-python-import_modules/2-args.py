@@ -7,5 +7,5 @@ if __name__ == "__main__":
                                  else "arguments",
                                  "." if num == 0 else ":"))
     for a, s in enumerate(argv):
-          if a > 0:
-              print("{}: {}".format(a, s))
+        if a > 0:
+            print("{}: {}".format(a, s))
