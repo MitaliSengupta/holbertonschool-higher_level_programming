@@ -13,7 +13,7 @@ void print_python_bytes(PyObject *p)
         {
                 PyBytes_AsStringAndSize(p, &str, &length);
                 printf("  size: %lu\n", length);
-                printf("  string: %s\n", str);
+                printf("  trying string: %s\n", str);
                 if (length > 10)
                         length = 10;
                 else
