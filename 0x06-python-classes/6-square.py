@@ -19,7 +19,8 @@ class Square:
             raise ValueError("size must be >= 0")
         if not isinstance(position, tuple):
             raise TypeError(messg)
-        if not isinstance(position[0], int) or not isinstance(position[1], int):
+        if not isinstance(position[0],
+                          int) or not isinstance(position[1], int):
             raise TypeError(messg)
         if position[0] < 0 or position[1] < 0:
             raise TypeError(messg)
