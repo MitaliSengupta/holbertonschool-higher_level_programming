@@ -6,6 +6,7 @@ class MagicClass:
     """ class that create circle area"""
 
     def __init__(self, radius=0):
+
         """ initializing """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
