@@ -26,7 +26,8 @@ class Square:
         setter validating size is int and >= 0
 
         Raise:
-             TypeError and ValueError
+             TypeError
+             ValueError
         """
         return (self.__size)
 
@@ -57,15 +58,23 @@ class Square:
         """
         defines position setter values
         """
-        if type(value) is not tuple:
+        if self._tuple_(value):
+            self.__position = value
+        elif not self._tuple_(value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        if len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not(type(value[0]) is int and type(value[1]) is int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if (value[0] < 0 or value[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+
+    def _tuple_(self, position):
+        """
+        check if it is a tuple and +ive integer
+        """
+        if type(position) is not tuple or len(position) != 2:
+            return False
+        elif type(position[0]) is not int or position[0] < 0:
+            return False
+        elif type(position[1]) is not int or position[1] < 0:
+            return False
+        else:
+            return True
 
     def area(self):
         """
