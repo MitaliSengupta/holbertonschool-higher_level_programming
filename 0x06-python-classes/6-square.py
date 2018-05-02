@@ -40,9 +40,9 @@ class Square:
              TypeError and ValueError
         """
         if type(value) is not int:
-            raise ValueError("size must be an integer")
+            raise TypeError("size must be an integer")
         elif value < 0:
-            raise TypeError("size must be >= 0")
+            raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
@@ -88,6 +88,7 @@ class Square:
         """
         if self.size == 0:
             print()
+            return
         for a in range(self.position[1]):
             print()
         for a in range(self.size):
