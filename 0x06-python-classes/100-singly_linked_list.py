@@ -43,6 +43,7 @@ SinglyLinkedList class
 creats a linkedlist of sorted Node objs and prints
 """
 
+
 class SinglyLinkedList:
     """
     Initializing SinglyLinkedList obj
