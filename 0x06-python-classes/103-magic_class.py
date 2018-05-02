@@ -4,6 +4,7 @@ import math
 
 class MagicClass:
     """ class that create circle area"""
+
     def __init__(self, radius=0):
         """ initializing """
         self.__radius = 0
