@@ -23,6 +23,10 @@
 >>> print(matrix_divided(matrix, 1))
 [[1.0, 2.0, 3.0]]
 
+"""
+Error
+"""
+
 >>> print(matrix_divided(matrix, None))
 Traceback (most recent call last):
 TypeError: div must be a number
