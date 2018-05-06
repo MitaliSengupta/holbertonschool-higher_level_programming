@@ -54,8 +54,8 @@ def matrix_mul(m_a, m_b):
         else:
             raise TypeError(typeErr.format('m_b'))
 
-    if len(m_a[0]) != len(m_b[0]):
-        raise ValueError("m_a and m_b can't be multiplied")
+    if len(m_a[0]) != len(m_b):
+        raise ValueError('m_a and m_b can\'t be multiplied')
 
     final = [[0 for a in m_b[0]] for x in m_a]
     for i in range(len(m_a)):
