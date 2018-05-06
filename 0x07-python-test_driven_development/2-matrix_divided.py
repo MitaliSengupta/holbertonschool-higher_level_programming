@@ -2,6 +2,8 @@
 """
 This module defines function to divide two list int a matrix
 """
+
+
 def matrix_divided(matrix, div):
         """
         Divides list and Raises TypeError
