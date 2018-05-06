@@ -24,7 +24,7 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0 or type(m_b[0]) is list and len(m_b[0]) == 0:
         raise ValueError(emptyErr.format('m_b'))
 
-    s =  -1
+    s = -1
 
     for x in m_a:
         if type(x) is list:
