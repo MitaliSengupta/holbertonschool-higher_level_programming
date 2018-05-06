@@ -13,6 +13,9 @@
 [[7.0, 10.0], [15.0, 22.0]]
 
 
+>>> matrix_mul([[1, 2], [3, 4], [5, 6]], [[5, 6, 7], [7, 8, 9]])
+[[19, 22, 25], [43, 50, 57], [67, 78, 89]]
+
 """
 Error
 """
@@ -106,13 +109,3 @@ TypeError: m_b must be a list
 Traceback (most recent call last):
 ...
 ValueError: m_b can't be empty
-
->>> matrix_mul([[1, 2], [3, 4], [3, 4]], [[5, 6, 1], [7, 8, 2]])
-Traceback (most recent call last):
-...
-ValueError: m_a and m_b can't be multiplied
-
->>> matrix_mul([[1, 2], [3, 4], [3, 4]], [[5, 6, 1], [7, 8, 2]])
-Traceback (most recent call last):
-...
-ValueError: m_a and m_b can't be multiplied
