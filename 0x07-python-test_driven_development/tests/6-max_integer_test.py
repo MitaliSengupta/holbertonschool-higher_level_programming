@@ -6,7 +6,6 @@ max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-
     def test_docstring(self):
         self.assertTrue(len(__import__('6-max_integer').__doc__) > 1)
 
@@ -30,6 +29,10 @@ class TestMaxInteger(unittest.TestCase):
     def test_integers(self):
         self.assertEqual(max_integer([1, 5, 6, 4]), 6)
         self.assertEqual(max_integer([55, 55, 55, 55]), 55)
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+        self.assertEqual(max_integer([1, 1, 1, 1]), 1)
+        self.assertEqual(max_integer([3]), 3)
 
     def test_integer_neg(self):
         self.assertEqual(max_integer([-44, -66, -43, -22]), -22)
