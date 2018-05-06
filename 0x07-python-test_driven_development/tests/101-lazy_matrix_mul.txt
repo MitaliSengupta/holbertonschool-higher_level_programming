@@ -57,9 +57,58 @@ setting an array element with a sequence.
 ... 	print(te)
 setting an array element with a sequence.
 
-
 >>> try:
 ...	print(matrix_mul(None, None))
 ... except Exception as te:
 ... 	print(te)
 Object arrays are not currently supported
+
+>>> try:
+...	print(matrix_mul([1, 2], None))
+... except Exception as te:
+... 	print(te)
+Object arrays are not currently supported
+
+>>> try:
+...	print(matrix_mul([], []))
+... except Exception as te:
+... 	print(te)
+0.0
+
+>>> try:
+...	print(matrix_mul([None], []))
+... except Exception as te:
+... 	print(te)
+Object arrays are not currently supported
+
+>>> try:
+...	print(matrix_mul([1, 2, 3], []))
+... except Exception as te:
+... 	print(te)
+shapes (3,) and (0,) not aligned: 3 (dim 0) != 0 (dim 0)
+
+>>> try:
+...	print(matrix_mul([1, 2, 3], [None]))
+... except Exception as te:
+... 	print(te)
+Object arrays are not currently supported
+
+>>> try:
+...	print(matrix_mul([[1, 2, 3]], [None]))
+... except Exception as te:
+... 	print(te)
+Object arrays are not currently supported
+
+>>> try:
+...	print(matrix_mul([[5, 6], [7, 8]], [[]]))
+... except Exception as te:
+... 	print(te)
+shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+>>> try:
+...	print(matrix_mul([[1, 2], [3, 4], [3, 4]], [[5, 6, 1], [7, 8, 2]]))
+... except Exception as te:
+... 	print(te)
+[[19 22  5]
+ [43 50 11]
+ [43 50 11]]
