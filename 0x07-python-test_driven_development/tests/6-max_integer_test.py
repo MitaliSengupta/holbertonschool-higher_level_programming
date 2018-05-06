@@ -29,13 +29,14 @@ class TestMaxInteger(unittest.TestCase):
     def test_integers(self):
         self.assertEqual(max_integer([1, 5, 6, 4]), 6)
         self.assertEqual(max_integer([55, 55, 55, 55]), 55)
-        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([6, 2, 3, 4]), 6)
         self.assertEqual(max_integer([1, 3, 4, 2]), 4)
         self.assertEqual(max_integer([1, 1, 1, 1]), 1)
         self.assertEqual(max_integer([3]), 3)
 
     def test_integer_neg(self):
         self.assertEqual(max_integer([-44, -66, -43, -22]), -22)
+        self.assertEqual(max_integer([1, 3, 74, -2]), 74)
 
     def test_float(self):
         self.assertEqual(max_integer([2.2, 3.3, 4.4, 5.5]), 5.5)
