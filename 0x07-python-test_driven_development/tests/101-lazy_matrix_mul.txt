@@ -112,3 +112,15 @@ shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
 [[19 22  5]
  [43 50 11]
  [43 50 11]]
+
+>>> try:
+...	print(matrix_mul([[1, 2, 3]], ))
+... except Exception as te:
+...	print(te)
+lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> try:
+...	print(matrix_mul())
+... except Exception as te:
+...	print(te)
+lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
