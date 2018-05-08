@@ -12,7 +12,7 @@ class Rectangle:
     both will have property and setter function definition
     """
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """
         instantiates width and height
         """
