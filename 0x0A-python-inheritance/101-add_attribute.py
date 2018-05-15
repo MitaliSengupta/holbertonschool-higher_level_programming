@@ -4,6 +4,7 @@ This module has a function
 that adds new attribute to an obj
 """
 
+
 def add_attribute(ob, attr, value):
     """
     add attribute to class else raises error
