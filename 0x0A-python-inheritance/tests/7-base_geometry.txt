@@ -1,0 +1,95 @@
+>>> base_geometry = __import__("7-base_geometry").BaseGeometry
+
+>>> len(__import__("7-base_geometry").__doc__) > 1
+True
+
+>>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 1
+True
+
+>>> met = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(met) > 1
+True
+
+>>> ar = base_geometry()
+>>> ar.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> ar.area(33)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> ar.integer_validator("integer", 555)
+
+>>> ar.integer_validator("test", 0)
+Traceback (most recent call last):
+...
+ValueError: test must be greater than 0
+
+>>> ar.integer_validator("test2", -444)
+Traceback (most recent call last):
+...
+ValueError: test2 must be greater than 0
+
+>>> ar.integer_validator("string", "python")
+Traceback (most recent call last):
+...
+TypeError: string must be an integer
+
+>>> ar.integer_validator("float", -444.54)
+Traceback (most recent call last):
+...
+TypeError: float must be an integer
+
+>>> ar.integer_validator("bool", True)
+Traceback (most recent call last):
+...
+TypeError: bool must be an integer
+
+>>> ar.integer_validator("list", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+>>> ar.integer_validator("tuple", (22, 333))
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
+>>> ar.integer_validator("complex", complex(33, 44))
+Traceback (most recent call last):
+...
+TypeError: complex must be an integer
+
+>>> ar.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
+
+>>> ar.integer_validator("set", {22, "python"})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
+
+>>> ar.integer_validator("blue", None)
+Traceback (most recent call last):
+...
+TypeError: blue must be an integer
+
+
+>>> ar.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> ar.integer_validator("integer")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> ar.integer_validator("integer", 2, 2)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
