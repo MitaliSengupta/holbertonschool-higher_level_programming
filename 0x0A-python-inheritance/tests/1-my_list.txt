@@ -60,6 +60,13 @@ True
 >>> l.print_sorted()
 [-49, -10, -9, -2]
 
+>>> l = MyList()
+>>> l.append(0)
+>>> l.append(0)
+>>> l.append(0)
+>>> l.print_sorted()
+[0, 0, 0]
+
 >>> l.print_sorted(44, 33)
 Traceback (most recent call last):
 ...
