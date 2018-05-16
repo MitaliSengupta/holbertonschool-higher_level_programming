@@ -8,6 +8,7 @@ exception when required
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     class Rectangle with private height and width
