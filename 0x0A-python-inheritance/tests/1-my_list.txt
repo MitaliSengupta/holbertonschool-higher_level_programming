@@ -19,14 +19,16 @@ True
 
 >>> l = MyList()
 >>> l.append(10)
->>> l.append(11)
+>>> l.append(15)
 >>> l.append(12)
 >>> l.append(13)
 >>> l.append(14)
 >>> print(l)
-[10, 11, 12, 13, 14]
+[10, 15, 12, 13, 14]
 >>> l.print_sorted()
-[10, 11, 12, 13, 14]
+[10, 12, 13, 14, 15]
+>>> print(l)
+[10, 15, 12, 13, 14]
 
 >>> l = MyList()
 >>> l.append(343)
