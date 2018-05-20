@@ -117,7 +117,7 @@ class Rectangle(Base):
         """
         This function returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".
+        return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
                 format(self.id, self.__x, self.__y, self.__width,
                        self.__height))
 
@@ -148,3 +148,16 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        This function returns the dictionary representation
+        of a rectangle
+        """
+        dict = {}
+        dict["id"] = self.id
+        dict["width"] = self.width
+        dict["height"] = self.height
+        dict["x"] = self.x
+        dict["y"] = self.y
+        return (dict)
