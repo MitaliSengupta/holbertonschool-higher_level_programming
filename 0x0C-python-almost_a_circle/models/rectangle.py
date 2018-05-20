@@ -84,7 +84,7 @@ class Rectangle(Base):
         """
         returns the y
         """
-        return (self.__x)
+        return (self.__y)
 
     @y.setter
     def y(self, value):
@@ -109,8 +109,8 @@ class Rectangle(Base):
         """
         This function prints in stdout the rectangle
         """
-        print(("\n" * self.__y) + "\n".join(((" " * self.__x)
-                                             + ("#" * self.__width))
+        print(("\n" * self.__y) + "\n".join(((" " * self.__x) +
+                                             ("#" * self.__width))
                                             for a in range(self.__height)))
 
     def __str__(self):
