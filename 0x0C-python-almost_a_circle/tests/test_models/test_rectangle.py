@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module contains all unittest cases for
+Base class
+"""
 import unittest
 import pep8
 from models.base import Base
@@ -7,13 +11,9 @@ import sys
 from io import StringIO
 import json
 import os
-"""
-This module contains all unittest cases for
-Base class
-"""
 
 
-class TestBase(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
     """
     Class containing functions to run
     multiple tests
@@ -37,7 +37,7 @@ class TestBase(unittest.TestCase):
         Tests for pep8
         """
         p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['models/base.py'])
+        p = p8.check_files(['models/rectangle.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_pep8_test(self):
@@ -45,7 +45,7 @@ class TestBase(unittest.TestCase):
         Tests for pep8
         """
         p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['tests/test_models/test_base.py'])
+        p = p8.check_files(['tests/test_models/test_rectangle.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
     def test_00_documentation(self):
@@ -102,7 +102,6 @@ class TestBase(unittest.TestCase):
             Rectangle(10)
             Rectangle()
             Rectangle(x=10, y=20)
-
 
     def test_2_TypeError(self):
         """
@@ -172,13 +171,13 @@ class TestBase(unittest.TestCase):
         Base._Base__nb_objects = 0
         R1 = Rectangle(2, 4)
         R1O = "##\n" \
-                 "##\n" \
-                 "##\n" \
-                 "##\n"
+              "##\n" \
+              "##\n" \
+              "##\n"
         R2 = Rectangle(2, 3)
         R2O = "##\n" \
-                 "##\n" \
-                 "##\n"
+              "##\n" \
+              "##\n"
         try:
             R1.display()
             self.assertEqual(sys.stdout.getvalue(), R1O)
@@ -210,13 +209,13 @@ class TestBase(unittest.TestCase):
         Base._Base__nb_objects = 0
         R1 = Rectangle(2, 3, 2, 2)
         R1O = "\n" \
-                 "\n" \
-                 "  ##\n" \
-                 "  ##\n" \
-                 "  ##\n"
+              "\n" \
+              "  ##\n" \
+              "  ##\n" \
+              "  ##\n"
         R2 = Rectangle(3, 2, 1, 0)
         R2O = " ###\n" \
-                 " ###\n"
+              " ###\n"
         try:
             R1.display()
             self.assertEqual(sys.stdout.getvalue(), R1O)
