@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import json
-import csv
 """
 This modules contains a class Base
 with all its methods and attributes
 definition
 """
+import json
+import csv
 
 
 class Base:
