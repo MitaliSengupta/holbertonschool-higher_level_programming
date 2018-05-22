@@ -49,6 +49,10 @@ class TestBase(unittest.TestCase):
         p = p8.check_files(['tests/test_models/test_base.py'])
         self.assertEqual(p.total_errors, 0, "fix pep8")
 
+    def test_docstring(self):
+        """test if docstring"""
+        self.assertIsNotNone(Base.__doc__)
+
     def test_00_documentation(self):
         """
         Test to see if documentation is
