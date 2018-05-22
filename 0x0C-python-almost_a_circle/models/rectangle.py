@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 This module contains a class Rectangle
 with all its methods and attributes
 definition
 """
+from models.base import Base
 
 
 class Rectangle(Base):
