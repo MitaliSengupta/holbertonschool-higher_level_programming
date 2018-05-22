@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import csv
 """
 This modules contains a class Base
 with all its methods and attributes
@@ -18,11 +19,11 @@ class Base:
         """
         Instantiation of class which checks for id
         """
-        if id is None:
+        if id is not None:
+            self.id = id
+        else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-        else:
-            self.id = id
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -55,7 +56,7 @@ class Base:
         This function returns the list
         of the json string represenation
         """
-        if len(json_string) == 0 or json_string is None:
+        if json_string is None or len(json_string) == 0:
             return ([])
         return (json.loads(json_string))
 
@@ -89,4 +90,40 @@ class Base:
             pass
         return (lst)
 
-    
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        This function serializes in csv
+        """
+        fn = cls.__name__ + ".csv"
+        if fn == "Rectangle.csv":
+            fields = ["id", "width", "height", "x", "y"]
+        else:
+            fields = ["id", "size", "x", "y"]
+        with open(fn, mode="w", newline="") as myFile:
+            if list_objs is None:
+                writer = csv.writer(myFile)
+                writer.writerow([[]])
+            else:
+                writer = csv.DictWriter(myFile, fieldnames=fields)
+                writer.writeheader()
+                for x in list_objs:
+                    writer.writerow(x.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        This function deserializes from csv
+        """
+        try:
+            fn = cls.__name__ + ".csv"
+            with open(fn, newline="") as myFile:
+                reader = csv.DictReader(myFile)
+                lst = []
+                for x in reader:
+                    for i, n in x.items():
+                        x[i] = int(n)
+                    lst.append(x)
+                return ([cls.create(**objt) for objt in lst])
+        except FileNotFoundError:
+            return ([])
