@@ -6,7 +6,8 @@ definition
 """
 import json
 import csv
-
+import turtle
+from random import choice as random
 
 class Base:
     """
@@ -127,3 +128,40 @@ class Base:
                 return ([cls.create(**objt) for objt in lst])
         except FileNotFoundError:
             return ([])
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Turtle creates square and rectangle
+        """
+
+        ink = ('black', 'orange', 'red', 'blue', 'green', 'violet')
+
+        for r in list_rectangles:
+            drawing = turtle.Pen(visible=False)
+            drawing.pencolor(random(ink))
+            drawing.penup()
+            drawing.setx(r.x)
+            drawing.sety(r.y)
+            drawing.pendown()
+            drawing.forward(r.width)
+            drawing.left(90)
+            drawing.forward(r.height)
+            drawing.left(90)
+            drawing.forward(r.width)
+            drawing.left(90)
+            drawing.forward(r.height)
+            drawing.left(90)
+
+        for s in list_squares:
+            drawing = turtle.Pen(visible=False)
+            drawing.pencolor(random(ink))
+            drawing.penup()
+            drawing.setx(s.x)
+            drawing.sety(s.y)
+            drawing.pendown()
+            total = 0
+            while total < 5:
+                drawing.forward(s.size)
+                drawing.left(90)
+                total += 1
