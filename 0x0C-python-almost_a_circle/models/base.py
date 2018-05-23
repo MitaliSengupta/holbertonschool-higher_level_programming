@@ -9,6 +9,7 @@ import csv
 import turtle
 from random import choice as random
 
+
 class Base:
     """
     This class has a private attribute __nb_objects = 0
