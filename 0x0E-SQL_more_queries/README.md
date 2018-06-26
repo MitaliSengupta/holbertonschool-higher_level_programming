@@ -1,6 +1,6 @@
-## More SQL queries
+# More SQL queries
 
-# Project Learnings
+## Project Learnings
 - How to create a new MySQL user
 - How to manage privileges for a user to a database or table
 - What’s a PRIMARY KEY
@@ -10,7 +10,7 @@
 - What are subqueries
 - What are JOIN and UNION
 
-# Tasks
+## Tasks
 
 - Write a script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server.
 
