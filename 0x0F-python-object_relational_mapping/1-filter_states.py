@@ -10,10 +10,11 @@ if __name__ == "__main__":
     import MySQLdb
     db = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     curr = db.cursor()
-    print(type(curr))
-    curr.execute("""SELECT * FROM states where name LIKE 'N%' ORDER BY states.id ASC""")
+    curr.execute("SELECT * FROM states where name LIKE 'N%'\
+                 ORDER BY states.id ASC")
     lst = curr.fetchall()
     for r in lst:
-        print(r)
+        if r[1][0] == 'N':
+            print(r)
     curr.close()
     db.close()
