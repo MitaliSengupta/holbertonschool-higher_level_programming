@@ -13,7 +13,6 @@ if __name__ == "__main__":
     print(type(curr))
     curr.execute("""SELECT * FROM states where name LIKE 'N%' ORDER BY states.id ASC""")
     lst = curr.fetchall()
-    print(type(lst[0]))
     for r in lst:
         print(r)
     curr.close()
