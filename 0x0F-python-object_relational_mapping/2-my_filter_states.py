@@ -14,6 +14,7 @@ if __name__ == "__main__":
     cur.execute("""SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC""".format(argv[4]))
     lst = cur.fetchall()
     for r in lst:
-        print(r)
+        if r[1] == argv[4]:
+            print(r)
     cur.close()
     db.close()
