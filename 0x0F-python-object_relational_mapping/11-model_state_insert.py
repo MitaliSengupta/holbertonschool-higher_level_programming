@@ -20,5 +20,5 @@ if __name__ == "__main__":
     for stat in session().query(State).filter(
             State.name == 'Louisiana').order_by(State.id).all():
         if stat:
-            print("{}".format(stat.id))
+            print(stat.id)
     session().close()
