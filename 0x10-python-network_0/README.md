@@ -1,2 +1,2 @@
 Python Network
-learning how to curl from remote
+Learning how to curl from remote
