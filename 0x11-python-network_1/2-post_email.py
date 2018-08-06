@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import urllib
-import sys
+import urllib.request
+import urllib.parse
+from sys import argv
 """
 script that takes in a url and an email, sends a POST request
 to the url with the email as parameter and displays body of the
@@ -14,5 +15,5 @@ if __name__ == "__main__":
     info = info.encode('ascii')
     url = argv[1]
     reply = urllib.request.Request(url, info)
-    with urllib.request.urlopen(reply) as reply:
-        print(reply.read().decode(encoding="utf-8"))
+    with urllib.request.urlopen(reply) as rep:
+        print(rep.read().decode(encoding="utf-8"))
