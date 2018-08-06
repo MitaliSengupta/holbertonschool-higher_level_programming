@@ -1,5 +1,7 @@
 # Network 1
 
+## Tools utilized: Python, Containers
+
 ## Learnings from the project
 - How to fetch internet resources with the Python package urllib
 - How to decode urllib body response
