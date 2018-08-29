@@ -124,3 +124,26 @@
     - The function must be visible from outside
     - The name of the function must be add
     - You are not allowed to use var
+
+- Const or not const
+  - Write a file that modifies the value of myVar to 333
+  - #!/usr/bin/node
+    myVar = 89;
+    require('./100-let_me_const')
+    console.log(myVar);
+
+- Call me Moby
+  - Write a function that executes x times a function.
+    - The function must be visible from outside
+    - Prototype: function (x, theFunction)
+    - You are not allowed to use var
+
+- Add me maybe
+  - Write a function that increments and calls a function.
+    - The function must be visible from outside
+    - Prototype: function (number, theFunction)
+    - You are not allowed to use var
+
+-  Increment object
+   - Update this script by adding a new function incr that increments the integer value.
+     - You are not allowed to use var
